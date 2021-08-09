@@ -1,0 +1,4 @@
+include ':plugin'
+include ':library'
+include ':app'
+rootProject.name = "DxKit"

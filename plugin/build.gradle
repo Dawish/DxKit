@@ -1,0 +1,32 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    //添加 gradle
+    // implementation 'com.android.tools.build:gradle:3.6.1'
+    implementation 'com.android.tools.build:gradle:4.0.2'
+}
+
+repositories {
+    mavenCentral()
+}
+
+// 设置maven deployer
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //设置插件的GAV参数
+            pom.groupId = 'com.dxkit.plugin'
+            pom.artifactId = 'dxkit-click'
+            pom.version = '1.0.0'
+            //文件发布到下面目录
+            repository(url: uri('../release'))
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
