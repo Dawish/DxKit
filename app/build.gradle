@@ -4,6 +4,11 @@ plugins {
 
 apply plugin: 'dxkit-click'
 
+DxKitExt {
+    isForbidStickClick = true
+    canShowClickId = true
+    clickUtilPath = "com.dxkit.util"
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion

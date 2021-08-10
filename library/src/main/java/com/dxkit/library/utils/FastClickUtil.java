@@ -15,8 +15,8 @@ public final class FastClickUtil {
 
     public static boolean isFastDoubleClick() {
         long time = System.currentTimeMillis();
-        DxLog.d("FastClickUtil", "isFastDoubleClick time:" + time);
         long timeDistance = time - sLastClickTime;
+        DxLog.d("FastClickUtil", "isFastDoubleClick timeDistance:" + timeDistance);
         if (0 < timeDistance && timeDistance < FAST_CLICK_TIME_DISTANCE) {
             DxLog.e("FastClickUtil", "isFastDoubleClick true");
             return true;

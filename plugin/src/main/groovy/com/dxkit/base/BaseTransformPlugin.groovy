@@ -15,6 +15,10 @@ abstract class BaseTransformPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
+
+        project.extensions.create('DxKitExt', DxKitExtension.class);
+        project.task('infoTask', type: InfoTask)
+
         //注册方式1
         AppExtension appExtension = project.extensions.getByType(AppExtension)
         appExtension.registerTransform(getCustomTransform(project))
