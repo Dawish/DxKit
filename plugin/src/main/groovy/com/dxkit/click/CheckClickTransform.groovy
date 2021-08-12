@@ -1,5 +1,6 @@
 package com.dxkit.click
 
+import com.dxkit.InfoClassVisitor
 import com.dxkit.base.BaseTransform
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ClassWriter
@@ -11,9 +12,18 @@ import org.objectweb.asm.ClassWriter
  */
 class CheckClickTransform extends BaseTransform {
 
+    List<String> searchStringList = new ArrayList<String>()
+
+    CheckClickTransform(String[] searchStrings){
+        if (searchStrings != null && searchStrings.length > 0) {
+            searchStringList.addAll(Arrays.asList(searchStrings))
+        }
+    }
+
     @Override
     ClassVisitor getClassVisitor(ClassWriter classWriter) {
-        return new CheckClickClassVisitor(classWriter)
+//        return new CheckClickClassVisitor(classWriter)
+        return new InfoClassVisitor(classWriter, searchStringList)
     }
 
     @Override

@@ -11,6 +11,7 @@ class InfoTask extends DefaultTask {
     @TaskAction
     void printInfo(){
         println "isForbidStickClick : ${project.DxKitExt.isForbidStickClick},\n clickUtilPath: ${project.DxKitExt.clickUtilPath}"
+        println "searchStrings : ${project.DxKitExt.searchStrings}"
     }
 
 }

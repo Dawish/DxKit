@@ -11,6 +11,8 @@ class CheckClickPlugin extends BaseTransformPlugin {
 
     @Override
     Transform getCustomTransform(Project project) {
-        return new CheckClickTransform()
+        String[] searchStrings = project.DxKitExt.searchStrings
+        println "afterEvaluate searchStrings : ${project.DxKitExt.searchStrings}"
+        return new CheckClickTransform(searchStrings)
     }
 }

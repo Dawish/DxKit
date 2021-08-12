@@ -15,20 +15,20 @@ abstract class BaseTransform extends Transform {
 
     @Override
     Set<QualifiedContent.ContentType> getInputTypes() {
-        //需要处理的数据类型,这里表示class文件
+        // 需要处理的数据类型,这里表示class文件
         return TransformManager.CONTENT_CLASS
     }
 
     @Override
     Set<? super QualifiedContent.Scope> getScopes() {
-        //作用范围
+        // 作用范围
         return TransformManager.SCOPE_FULL_PROJECT
     }
 
     @Override
     boolean isIncremental() {
-        //是否支持增量编译
-        //return true
+        // 是否支持增量编译
+        // return true
         // TODO 先不处理增量问题
         return false
     }
@@ -42,10 +42,10 @@ abstract class BaseTransform extends Transform {
         super.transform(transformInvocation)
         printCopyRight()
 
-        //TransformOutputProvider管理输出路径,如果消费型输入为空,则outputProvider也为空
+        // TransformOutputProvider管理输出路径,如果消费型输入为空,则outputProvider也为空
         TransformOutputProvider outputProvider = transformInvocation.outputProvider
 
-        //当前是否是增量编译,由isIncremental方法决定的
+        // 当前是否是增量编译,由isIncremental方法决定的
         // 当上面的isIncremental()写的返回true,这里得到的值不一定是true,还得看当时环境.比如clean之后第一次运行肯定就不是增量编译嘛.
         boolean isIncremental = transformInvocation.isIncremental()
         if (!isIncremental) {
@@ -68,9 +68,9 @@ abstract class BaseTransform extends Transform {
                 })
             }
 
-            //处理源码文件
+            // 处理源码文件
             input.directoryInputs.each { directoryInput ->
-                //多线程
+                // 多线程
                 mWaitableExecutor.execute(new Callable<Object>() {
                     @Override
                     Object call() throws Exception {
@@ -81,7 +81,7 @@ abstract class BaseTransform extends Transform {
             }
         }
 
-        //等待所有任务结束
+        // 等待所有任务结束
         mWaitableExecutor.waitForTasksWithQuickFail(true)
     }
 
@@ -113,7 +113,6 @@ abstract class BaseTransform extends Transform {
     }
 
     void transformJar(File jarInputFile, File dest) {
-        // println("拷贝文件 $dest -----")
         FileUtils.copyFile(jarInputFile, dest)
     }
 
@@ -158,14 +157,14 @@ abstract class BaseTransform extends Transform {
     }
 
     void transformSingleFile(File inputFile, File destFile) {
-        println("拷贝单个文件")
+        println("transformSingleFile")
         // FileUtils.copyFile(inputFile, destFile)
         traceFile(inputFile, destFile)
     }
 
     void traceFile(File inputFile, File outputFile) {
         if (isNeedTraceClass(inputFile)) {
-            println("${inputFile.name} ---- 需要插桩 ----")
+            println(" >>>>> isNeedTraceClass >>>>> ${inputFile.name}")
             FileInputStream inputStream = new FileInputStream(inputFile)
             FileOutputStream outputStream = new FileOutputStream(outputFile)
 
@@ -194,32 +193,33 @@ abstract class BaseTransform extends Transform {
     void transformDirectory(DirectoryInput directoryInput, File dest) {
 
         String[] extensions = ["class"]
-        //递归地去获取该文件夹下面所有的文件
+        // 递归地去获取该文件夹下面所有的文件
         Collection<File> fileList = FileUtils.listFiles(directoryInput.file, extensions, true)
-        def outputFilePath = dest.absolutePath
         def inputFilePath = directoryInput.file.absolutePath
+        def outputFilePath = dest.absolutePath
 
-        println("outputFilePath = $outputFilePath     inputFilePath = $inputFilePath")
-        //outputFilePath = E:\Github\GradleStudy\app\build\intermediates\transforms\MethodTimeTransform\free\debug\37
-        //inputFilePath  = E:\Github\GradleStudy\app\build\intermediates\javac\freeDebug\classes
+        // inputFilePath = DxKit\app\build\intermediates\javac\debug\classes
+        // outputFilePath = DxKit\app\build\intermediates\transforms\CheckClickTransform\debug\40
+        println("inputFilePath = $inputFilePath")
+        println("outputFilePath = $outputFilePath")
 
 
         fileList.each { inputFile ->
-            //替换前  GradleStudy\app\build\intermediates\javac\freeDebug\classes\com\xfhy\gradledemo\MainActivity$1.class
-            //替换后  GradleStudy\app\build\intermediates\transforms\MethodTimeTransform\free\debug\37\com\xfhy\gradledemo\MainActivity$1.class
-            println("替换前  file.absolutePath = ${inputFile.absolutePath}")
+            // replace before file.absolutePath = DxKit\app\build\intermediates\javac\debug\classes\com\dxkit\demo\MainActivity.class
+            // replace after file.absolutePath = DxKit\app\build\intermediates\transforms\CheckClickTransform\debug\40\com\dxkit\demo\MainActivity.class
+            println("replace before file.absolutePath = ${inputFile.absolutePath}")
             def outputFullPath = inputFile.absolutePath.replace(inputFilePath, outputFilePath)
-            println("替换后  file.absolutePath = ${outputFullPath}")
+            println("replace after file.absolutePath = ${outputFullPath}")
             def outputFile = new File(outputFullPath)
-            //创建文件
+            // 创建文件
             FileUtils.touch(outputFile)
-            //单个单个地复制文件
-            //FileUtils.copyFile(file, outputFile)
+            // 单个单个地复制文件
+            // FileUtils.copyFile(file, outputFile)
             transformSingleFile(inputFile, outputFile)
         }
 
-        //如果不处理,则直接复制文件夹给下一个Transform的输入目录就行
-        //FileUtils.copyDirectory(directoryInput.file, dest)
+        // 如果不处理,则直接复制文件夹给下一个Transform的输入目录就行
+        // FileUtils.copyDirectory(directoryInput.file, dest)
     }
 
     /**

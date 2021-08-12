@@ -19,13 +19,14 @@ abstract class BaseTransformPlugin implements Plugin<Project> {
         project.extensions.create('DxKitExt', DxKitExtension.class);
         project.task('infoTask', type: InfoTask)
 
-        //注册方式1
+        // 注册方式1
         AppExtension appExtension = project.extensions.getByType(AppExtension)
         appExtension.registerTransform(getCustomTransform(project))
-        //注册之后会在TransformManager#addTransform中生成一个task.
+        // 注册之后会在TransformManager#addTransform中生成一个task.
 
-        //注册方式2
-        //project.android.registerTransform(getCustomTransform())
+        // 注册方式2
+        // project.android.registerTransform(getCustomTransform())
+
     }
 
     /**

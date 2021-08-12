@@ -1,0 +1,364 @@
+Classfile jar:file:/I:/classes_dex2jar.jar!/com/github/megatronking/stringfog/sample1/MainActivity.class
+  Last modified 2021-8-10; size 2332 bytes
+  MD5 checksum 39617ba112ccdb7554c2eca36a996553
+public class com.github.megatronking.stringfog.sample1.MainActivity extends android.support.v7.app.AppCompatActivity
+  minor version: 0
+  major version: 50
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+    #1 = Utf8               com/github/megatronking/stringfog/sample1/MainActivity
+    #2 = Class              #1            // com/github/megatronking/stringfog/sample1/MainActivity
+    #3 = Utf8               android/support/v7/app/AppCompatActivity
+    #4 = Class              #3            // android/support/v7/app/AppCompatActivity
+    #5 = Utf8               STATIC_FINAL_FIELD_1
+    #6 = Utf8               Ljava/lang/String;
+    #7 = Utf8               STATIC_FINAL_FIELD_2
+    #8 = Utf8               STATIC_FINAL_FIELD_3
+    #9 = Utf8               null_static
+   #10 = Utf8               null_static_final
+   #11 = Utf8               static_field_1
+   #12 = Utf8               static_field_2
+   #13 = Utf8               static_field_3
+   #14 = Utf8               final_field_1
+   #15 = Utf8               final_field_2
+   #16 = Utf8               final_field_3
+   #17 = Utf8               normal_field_1
+   #18 = Utf8               normal_field_2
+   #19 = Utf8               normal_field_3
+   #20 = Utf8               <clinit>
+   #21 = Utf8               ()V
+   #22 = Utf8               PAAfGDBQIR0ECBoCGRwTKREFDzBGOhoTBQ==
+   #23 = String             #22           // PAAfGDBQIR0ECBoCGRwTKREFDzBGOhoTBQ==
+   #24 = Utf8               com/github/megatronking/stringfog/sample1/StringFog
+   #25 = Class              #24           // com/github/megatronking/stringfog/sample1/StringFog
+   #26 = Utf8               decrypt
+   #27 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+   #28 = NameAndType        #26:#27       // decrypt:(Ljava/lang/String;)Ljava/lang/String;
+   #29 = Methodref          #25.#28       // com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+   #30 = NameAndType        #5:#6         // STATIC_FINAL_FIELD_1:Ljava/lang/String;
+   #31 = Fieldref           #2.#30        // com/github/megatronking/stringfog/sample1/MainActivity.STATIC_FINAL_FIELD_1:Ljava/lang/String;
+   #32 = Utf8               PAAfGDBQIRsGDA0TIws4OxENGAZDDBIbBw8L
+   #33 = String             #32           // PAAfGDBQIRsGDA0TIws4OxENGAZDDBIbBw8L
+   #34 = NameAndType        #7:#6         // STATIC_FINAL_FIELD_2:Ljava/lang/String;
+   #35 = Fieldref           #2.#34        // com/github/megatronking/stringfog/sample1/MainActivity.STATIC_FINAL_FIELD_2:Ljava/lang/String;
+   #36 = Utf8               PAAfGDBQJhYeAA04NRsGPAwPMwlJPRUe
+   #37 = String             #36           // PAAfGDBQJhYeAA04NRsGPAwPMwlJPRUe
+   #38 = NameAndType        #8:#6         // STATIC_FINAL_FIELD_3:Ljava/lang/String;
+   #39 = Fieldref           #2.#38        // com/github/megatronking/stringfog/sample1/MainActivity.STATIC_FINAL_FIELD_3:Ljava/lang/String;
+   #40 = Utf8               PAAfGDBQIR0ECBoCGRwTKREFDw==
+   #41 = String             #40           // PAAfGDBQIR0ECBoCGRwTKREFDw==
+   #42 = NameAndType        #11:#6        // static_field_1:Ljava/lang/String;
+   #43 = Fieldref           #2.#42        // com/github/megatronking/stringfog/sample1/MainActivity.static_field_1:Ljava/lang/String;
+   #44 = Utf8               PAAfGDBQIRsGDA0TIws4OxENGAZD
+   #45 = String             #44           // PAAfGDBQIRsGDA0TIws4OxENGAZD
+   #46 = NameAndType        #12:#6        // static_field_2:Ljava/lang/String;
+   #47 = Fieldref           #2.#46        // com/github/megatronking/stringfog/sample1/MainActivity.static_field_2:Ljava/lang/String;
+   #48 = Utf8               PAAfGDBQJhYeAA04NRsGPAwP
+   #49 = String             #48           // PAAfGDBQJhYeAA04NRsGPAwP
+   #50 = NameAndType        #13:#6        // static_field_3:Ljava/lang/String;
+   #51 = Fieldref           #2.#50        // com/github/megatronking/stringfog/sample1/MainActivity.static_field_3:Ljava/lang/String;
+   #52 = Utf8               PAAfGDBOJhgeNh0TJxsOKzoKBQFBPw==
+   #53 = String             #52           // PAAfGDBOJhgeNh0TJxsOKzoKBQFBPw==
+   #54 = NameAndType        #10:#6        // null_static_final:Ljava/lang/String;
+   #55 = Fieldref           #2.#54        // com/github/megatronking/stringfog/sample1/MainActivity.null_static_final:Ljava/lang/String;
+   #56 = Utf8               PAAfGDBOJhgeNh0TJxsOKw==
+   #57 = String             #56           // PAAfGDBOJhgeNh0TJxsOKw==
+   #58 = NameAndType        #9:#6         // null_static:Ljava/lang/String;
+   #59 = Fieldref           #2.#58        // com/github/megatronking/stringfog/sample1/MainActivity.null_static:Ljava/lang/String;
+   #60 = Utf8               OxEeBQFHNRsV
+   #61 = String             #60           // OxEeBQFHNRsV
+   #62 = Utf8               PAAfGE9TJxUGAA1HJAMIKw4=
+   #63 = String             #62           // PAAfGE9TJxUGAA1HJAMIKw4=
+   #64 = Utf8               android/util/Log
+   #65 = Class              #64           // android/util/Log
+   #66 = Utf8               i
+   #67 = Utf8               (Ljava/lang/String;Ljava/lang/String;)I
+   #68 = NameAndType        #66:#67       // i:(Ljava/lang/String;Ljava/lang/String;)I
+   #69 = Methodref          #65.#68       // android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+   #70 = Utf8               <init>
+   #71 = NameAndType        #70:#21       // "<init>":()V
+   #72 = Methodref          #4.#71        // android/support/v7/app/AppCompatActivity."<init>":()V
+   #73 = Utf8               PAAfGDBQIR0ECBoCGQkOJgQA
+   #74 = String             #73           // PAAfGDBQIR0ECBoCGQkOJgQA
+   #75 = NameAndType        #14:#6        // final_field_1:Ljava/lang/String;
+   #76 = Fieldref           #2.#75        // com/github/megatronking/stringfog/sample1/MainActivity.final_field_1:Ljava/lang/String;
+   #77 = Utf8               PAAfGDBQIRsGDA0TIws4LgwCDQM=
+   #78 = String             #77           // PAAfGDBQIRsGDA0TIws4LgwCDQM=
+   #79 = NameAndType        #15:#6        // final_field_2:Ljava/lang/String;
+   #80 = Fieldref           #2.#79        // com/github/megatronking/stringfog/sample1/MainActivity.final_field_2:Ljava/lang/String;
+   #81 = Utf8               PAAfGDBQJhYeAA04IAYJKQk=
+   #82 = String             #81           // PAAfGDBQJhYeAA04IAYJKQk=
+   #83 = NameAndType        #16:#6        // final_field_3:Ljava/lang/String;
+   #84 = Fieldref           #2.#83        // com/github/megatronking/stringfog/sample1/MainActivity.final_field_3:Ljava/lang/String;
+   #85 = Utf8               PAAfGDBQIR0ECBoCGQEIOggNAA==
+   #86 = String             #85           // PAAfGDBQIR0ECBoCGQEIOggNAA==
+   #87 = NameAndType        #17:#6        // normal_field_1:Ljava/lang/String;
+   #88 = Fieldref           #2.#87        // com/github/megatronking/stringfog/sample1/MainActivity.normal_field_1:Ljava/lang/String;
+   #89 = Utf8               PAAfGDBQIRsGDA0TIws4JgoeAQ5M
+   #90 = String             #89           // PAAfGDBQIRsGDA0TIws4JgoeAQ5M
+   #91 = NameAndType        #18:#6        // normal_field_2:Ljava/lang/String;
+   #92 = Fieldref           #2.#91        // com/github/megatronking/stringfog/sample1/MainActivity.normal_field_2:Ljava/lang/String;
+   #93 = Utf8               PAAfGDBQJhYeAA04KAAVJQQA
+   #94 = String             #93           // PAAfGDBQJhYeAA04KAAVJQQA
+   #95 = NameAndType        #19:#6        // normal_field_3:Ljava/lang/String;
+   #96 = Fieldref           #2.#95        // com/github/megatronking/stringfog/sample1/MainActivity.normal_field_3:Ljava/lang/String;
+   #97 = Utf8               onCreate
+   #98 = Utf8               (Landroid/os/Bundle;)V
+   #99 = NameAndType        #97:#98       // onCreate:(Landroid/os/Bundle;)V
+  #100 = Methodref          #4.#99        // android/support/v7/app/AppCompatActivity.onCreate:(Landroid/os/Bundle;)V
+  #101 = Integer            2131296284
+  #102 = Utf8               setContentView
+  #103 = Utf8               (I)V
+  #104 = NameAndType        #102:#103     // setContentView:(I)V
+  #105 = Methodref          #2.#104       // com/github/megatronking/stringfog/sample1/MainActivity.setContentView:(I)V
+  #106 = Utf8               BQQFAi5DJx0EABoe
+  #107 = String             #106          // BQQFAi5DJx0EABoe
+  #108 = Integer            2131165315
+  #109 = Utf8               findViewById
+  #110 = Utf8               (I)Landroid/view/View;
+  #111 = NameAndType        #109:#110     // findViewById:(I)Landroid/view/View;
+  #112 = Methodref          #2.#111       // com/github/megatronking/stringfog/sample1/MainActivity.findViewById:(I)Landroid/view/View;
+  #113 = Utf8               android/widget/TextView
+  #114 = Class              #113          // android/widget/TextView
+  #115 = Utf8               java/lang/StringBuilder
+  #116 = Class              #115          // java/lang/StringBuilder
+  #117 = Methodref          #116.#71      // java/lang/StringBuilder."<init>":()V
+  #118 = Utf8               append
+  #119 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #120 = NameAndType        #118:#119     // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #121 = Methodref          #116.#120     // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #122 = Utf8               HAAfGA==
+  #123 = String             #122          // HAAfGA==
+  #124 = Utf8               toString
+  #125 = Utf8               ()Ljava/lang/String;
+  #126 = NameAndType        #124:#125     // toString:()Ljava/lang/String;
+  #127 = Methodref          #116.#126     // java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #128 = Utf8               setText
+  #129 = Utf8               (Ljava/lang/CharSequence;)V
+  #130 = NameAndType        #128:#129     // setText:(Ljava/lang/CharSequence;)V
+  #131 = Methodref          #114.#130     // android/widget/TextView.setText:(Ljava/lang/CharSequence;)V
+  #132 = Utf8               com/github/megatronking/stringfog/sample1/KotlinTest
+  #133 = Class              #132          // com/github/megatronking/stringfog/sample1/KotlinTest
+  #134 = Methodref          #133.#71      // com/github/megatronking/stringfog/sample1/KotlinTest."<init>":()V
+  #135 = Utf8               test
+  #136 = NameAndType        #135:#21      // test:()V
+  #137 = Methodref          #133.#136     // com/github/megatronking/stringfog/sample1/KotlinTest.test:()V
+  #138 = Utf8               Code
+{
+  protected static final java.lang.String STATIC_FINAL_FIELD_2;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PROTECTED, ACC_STATIC, ACC_FINAL
+
+  public static final java.lang.String STATIC_FINAL_FIELD_3;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+
+  public static java.lang.String null_static;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PUBLIC, ACC_STATIC
+
+  public static final java.lang.String null_static_final;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+
+  protected static java.lang.String static_field_2;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PROTECTED, ACC_STATIC
+
+  public static java.lang.String static_field_3;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PUBLIC, ACC_STATIC
+
+  protected final java.lang.String final_field_2;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PROTECTED, ACC_FINAL
+
+  public final java.lang.String final_field_3;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PUBLIC, ACC_FINAL
+
+  protected java.lang.String normal_field_2;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PROTECTED
+
+  public java.lang.String normal_field_3;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PUBLIC
+
+  static {};
+    descriptor: ()V
+    flags: ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: ldc           #23                 // String PAAfGDBQIR0ECBoCGRwTKREFDzBGOhoTBQ==
+         2: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+         5: putstatic     #31                 // Field STATIC_FINAL_FIELD_1:Ljava/lang/String;
+         8: ldc           #33                 // String PAAfGDBQIRsGDA0TIws4OxENGAZDDBIbBw8L
+        10: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        13: putstatic     #35                 // Field STATIC_FINAL_FIELD_2:Ljava/lang/String;
+        16: ldc           #37                 // String PAAfGDBQJhYeAA04NRsGPAwPMwlJPRUe
+        18: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        21: putstatic     #39                 // Field STATIC_FINAL_FIELD_3:Ljava/lang/String;
+        24: ldc           #41                 // String PAAfGDBQIR0ECBoCGRwTKREFDw==
+        26: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        29: putstatic     #43                 // Field static_field_1:Ljava/lang/String;
+        32: ldc           #45                 // String PAAfGDBQIRsGDA0TIws4OxENGAZD
+        34: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        37: putstatic     #47                 // Field static_field_2:Ljava/lang/String;
+        40: ldc           #49                 // String PAAfGDBQJhYeAA04NRsGPAwP
+        42: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        45: putstatic     #51                 // Field static_field_3:Ljava/lang/String;
+        48: ldc           #53                 // String PAAfGDBOJhgeNh0TJxsOKzoKBQFBPw==
+        50: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        53: putstatic     #55                 // Field null_static_final:Ljava/lang/String;
+        56: ldc           #57                 // String PAAfGDBOJhgeNh0TJxsOKw==
+        58: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        61: putstatic     #59                 // Field null_static:Ljava/lang/String;
+        64: ldc           #61                 // String OxEeBQFHNRsV
+        66: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        69: ldc           #63                 // String PAAfGE9TJxUGAA1HJAMIKw4=
+        71: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        74: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+        77: pop
+        78: return
+
+  public com.github.megatronking.stringfog.sample1.MainActivity();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #72                 // Method android/support/v7/app/AppCompatActivity."<init>":()V
+         4: aload_0
+         5: ldc           #74                 // String PAAfGDBQIR0ECBoCGQkOJgQA
+         7: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        10: putfield      #76                 // Field final_field_1:Ljava/lang/String;
+        13: aload_0
+        14: ldc           #78                 // String PAAfGDBQIRsGDA0TIws4LgwCDQM=
+        16: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        19: putfield      #80                 // Field final_field_2:Ljava/lang/String;
+        22: aload_0
+        23: ldc           #82                 // String PAAfGDBQJhYeAA04IAYJKQk=
+        25: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        28: putfield      #84                 // Field final_field_3:Ljava/lang/String;
+        31: aload_0
+        32: ldc           #86                 // String PAAfGDBQIR0ECBoCGQEIOggNAA==
+        34: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        37: putfield      #88                 // Field normal_field_1:Ljava/lang/String;
+        40: aload_0
+        41: ldc           #90                 // String PAAfGDBQIRsGDA0TIws4JgoeAQ5M
+        43: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        46: putfield      #92                 // Field normal_field_2:Ljava/lang/String;
+        49: aload_0
+        50: ldc           #94                 // String PAAfGDBQJhYeAA04KAAVJQQA
+        52: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        55: putfield      #96                 // Field normal_field_3:Ljava/lang/String;
+        58: return
+
+  protected void onCreate(android.os.Bundle);
+    descriptor: (Landroid/os/Bundle;)V
+    flags: ACC_PROTECTED
+    Code:
+      stack=2, locals=8, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokespecial #100                // Method android/support/v7/app/AppCompatActivity.onCreate:(Landroid/os/Bundle;)V
+         5: aload_0
+         6: ldc           #101                // int 2131296284
+         8: invokevirtual #105                // Method setContentView:(I)V
+        11: ldc           #107                // String BQQFAi5DJx0EABoe
+        13: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        16: astore_2
+        17: aload_0
+        18: ldc           #108                // int 2131165315
+        20: invokevirtual #112                // Method findViewById:(I)Landroid/view/View;
+        23: checkcast     #114                // class android/widget/TextView
+        26: astore_3
+        27: new           #116                // class java/lang/StringBuilder
+        30: dup
+        31: invokespecial #117                // Method java/lang/StringBuilder."<init>":()V
+        34: astore        4
+        36: aload         4
+        38: aload_2
+        39: invokevirtual #121                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        42: pop
+        43: aload         4
+        45: ldc           #123                // String HAAfGA==
+        47: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        50: invokevirtual #121                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        53: pop
+        54: aload_3
+        55: aload         4
+        57: invokevirtual #127                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        60: invokevirtual #131                // Method android/widget/TextView.setText:(Ljava/lang/CharSequence;)V
+        63: ldc           #61                 // String OxEeBQFHNRsV
+        65: invokestatic  #29                 // Method com/github/megatronking/stringfog/sample1/StringFog.decrypt:(Ljava/lang/String;)Ljava/lang/String;
+        68: astore        7
+        70: aload         7
+        72: getstatic     #31                 // Field STATIC_FINAL_FIELD_1:Ljava/lang/String;
+        75: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+        78: pop
+        79: aload         7
+        81: getstatic     #35                 // Field STATIC_FINAL_FIELD_2:Ljava/lang/String;
+        84: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+        87: pop
+        88: aload         7
+        90: getstatic     #39                 // Field STATIC_FINAL_FIELD_3:Ljava/lang/String;
+        93: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+        96: pop
+        97: aload         7
+        99: getstatic     #43                 // Field static_field_1:Ljava/lang/String;
+       102: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       105: pop
+       106: aload         7
+       108: getstatic     #47                 // Field static_field_2:Ljava/lang/String;
+       111: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       114: pop
+       115: aload         7
+       117: getstatic     #51                 // Field static_field_3:Ljava/lang/String;
+       120: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       123: pop
+       124: aload         7
+       126: aload_0
+       127: getfield      #76                 // Field final_field_1:Ljava/lang/String;
+       130: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       133: pop
+       134: aload         7
+       136: aload_0
+       137: getfield      #80                 // Field final_field_2:Ljava/lang/String;
+       140: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       143: pop
+       144: aload         7
+       146: aload_0
+       147: getfield      #84                 // Field final_field_3:Ljava/lang/String;
+       150: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       153: pop
+       154: aload         7
+       156: aload_0
+       157: getfield      #88                 // Field normal_field_1:Ljava/lang/String;
+       160: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       163: pop
+       164: aload         7
+       166: aload_0
+       167: getfield      #92                 // Field normal_field_2:Ljava/lang/String;
+       170: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       173: pop
+       174: aload         7
+       176: aload_0
+       177: getfield      #96                 // Field normal_field_3:Ljava/lang/String;
+       180: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       183: pop
+       184: aload         7
+       186: getstatic     #55                 // Field null_static_final:Ljava/lang/String;
+       189: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       192: pop
+       193: aload         7
+       195: getstatic     #59                 // Field null_static:Ljava/lang/String;
+       198: invokestatic  #69                 // Method android/util/Log.i:(Ljava/lang/String;Ljava/lang/String;)I
+       201: pop
+       202: new           #133                // class com/github/megatronking/stringfog/sample1/KotlinTest
+       205: dup
+       206: invokespecial #134                // Method com/github/megatronking/stringfog/sample1/KotlinTest."<init>":()V
+       209: invokevirtual #137                // Method com/github/megatronking/stringfog/sample1/KotlinTest.test:()V
+       212: return
+}
