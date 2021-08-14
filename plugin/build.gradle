@@ -18,8 +18,8 @@ uploadArchives {
     repositories {
         mavenDeployer {
             //设置插件的GAV参数
-            pom.groupId = 'com.dxkit.plugin'
-            pom.artifactId = 'dxkit-click'
+            pom.groupId = 'com.dx.plugin'
+            pom.artifactId = 'dxkit'
             pom.version = '1.0.0'
             //文件发布到下面目录
             repository(url: uri('../release'))

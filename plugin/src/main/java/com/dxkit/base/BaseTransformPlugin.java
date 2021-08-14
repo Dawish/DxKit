@@ -17,7 +17,7 @@ public abstract class BaseTransformPlugin implements Plugin<Project> {
     @Override
     public void apply(Project project) {
 
-        project.getExtensions().create("DxKitExt", DxKitExtension.class);
+        initExtension(project);
 
         // 注册方式1
         AppExtension appExtension = project.getExtensions().getByType(AppExtension.class);
@@ -28,6 +28,8 @@ public abstract class BaseTransformPlugin implements Plugin<Project> {
         // project.android.registerTransform(getCustomTransform())
 
     }
+
+    protected abstract void initExtension(Project project);
 
     /**
      * 需要注册的自定义Transform

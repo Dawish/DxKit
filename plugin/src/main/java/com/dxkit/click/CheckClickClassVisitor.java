@@ -1,6 +1,5 @@
 package com.dxkit.click;
 
-import com.dxkit.base.DxKitExtension;
 import com.dxkit.utils.LogUtil;
 
 import org.objectweb.asm.ClassVisitor;
@@ -30,9 +29,9 @@ public class CheckClickClassVisitor extends ClassVisitor {
     public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
         MethodVisitor methodVisitor = cv.visitMethod(access, name, descriptor, signature, exceptions);
 
-        LogUtil.log("DxKitExtension clickUtilPath:" + DxKitExtension.clickUtilPath);
-        LogUtil.log("DxKitExtension isForbidStickClick:" + DxKitExtension.isForbidStickClick);
-        LogUtil.log("DxKitExtension searchStrings:" + DxKitExtension.searchStrings);
+        LogUtil.log("------ name:" + name + " ------");
+        LogUtil.log("DxKit descriptor:" + descriptor);
+        LogUtil.log("DxKit signature:" + signature);
 
         if ("onClick".equals(name) && "(Landroid/view/View;)V".equals(descriptor)) {
             return new FastMethodVisitor(api, methodVisitor, access, name, descriptor);

@@ -146,7 +146,7 @@ public abstract class BaseTransform extends Transform {
             // Ignore
         }
 
-        println("isIncremental = $isIncremental");
+        println("BaseTransform: isIncremental = " + isIncremental());
 
         if (isIncremental) {
             String srcDirPath = directoryInput.getFile().getAbsolutePath();
@@ -178,15 +178,21 @@ public abstract class BaseTransform extends Transform {
     }
 
     protected void transformSingleFile(File inputFile, File destFile) {
-        println("transformSingleFile");
+        println("BaseTransform: transformSingleFile");
         // FileUtils.copyFile(inputFile, destFile)
-        traceFile(inputFile, destFile);
+        weaveFile(inputFile, destFile);
     }
 
-    protected void traceFile(File inputFile, File outputFile) {
+    /**
+     * 编织文件
+     *
+     * @param inputFile
+     * @param outputFile
+     */
+    protected void weaveFile(File inputFile, File outputFile) {
         try {
-            if (isNeedTraceClass(inputFile)) {
-                println(" >>>>> isNeedTraceClass >>>>> ${inputFile.name}");
+            if (isWeavableClass(inputFile)) {
+                println(" >>>>>> " + inputFile.getName() + "<<<<<<");
                 FileInputStream inputStream = new FileInputStream(inputFile);
                 FileOutputStream outputStream = new FileOutputStream(outputFile);
 
@@ -213,7 +219,23 @@ public abstract class BaseTransform extends Transform {
     /**
      * 这个文件是否需要插桩
      */
-    protected abstract boolean isNeedTraceClass(File file);
+    protected boolean isWeavableClass(File file) {
+
+        if (file == null) {
+            return false;
+        }
+
+        String className = file.getName();
+
+        if (className == null) {
+            return false;
+        }
+
+        return className.endsWith(".class")
+                && !className.contains("R$")
+                && !className.contains("R.class")
+                && !className.contains("BuildConfig.class");
+    }
 
     private void transformDirectory(DirectoryInput directoryInput, File dest) throws IOException {
 
@@ -232,9 +254,9 @@ public abstract class BaseTransform extends Transform {
         for (File inputFile : fileList) {
             // replace before file.absolutePath = DxKit\app\build\intermediates\javac\debug\classes\com\dxkit\demo\MainActivity.class
             // replace after file.absolutePath = DxKit\app\build\intermediates\transforms\CheckClickTransform\debug\40\com\dxkit\demo\MainActivity.class
-            println("replace before file.absolutePath = ${inputFile.absolutePath}");
+            println("replace before file.absolutePath = " + inputFile.getAbsolutePath());
             String outputFullPath = inputFile.getAbsolutePath().replace(inputFilePath, outputFilePath);
-            println("replace after file.absolutePath = ${outputFullPath}");
+            println("replace after file.absolutePath = " + outputFullPath);
             File outputFile = new File(outputFullPath);
             // 创建文件
             try {

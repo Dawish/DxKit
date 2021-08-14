@@ -3,12 +3,23 @@ plugins {
 }
 
 apply plugin: 'dxkit-click'
+apply plugin: 'dxkit-tryCatch'
 
-DxKitExt {
+clickExtension {
     isForbidStickClick = true
     canShowClickId = true
     clickUtilPath = "com.dxkit.util"
     searchStrings = ["android/telephony/TelephonyManager"]
+}
+
+tryCatchExtension {
+    methodMap = ["com.dxkit.demo.test.CrashTest.class": ["crashMethod1", "crashMethod2",
+                                                         "getInt", "isEnable", "getObj", "getStr",
+
+                                                        ]
+    ]
+
+    exceptionHandler = ["com.dxkit.library.utils.ExceptionHandler": "handleException"]
 }
 
 android {
