@@ -1,5 +1,7 @@
 package com.dxkit;
 
+import com.dxkit.base.DxKitExtension;
+
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.Attribute;
 import org.objectweb.asm.ClassVisitor;
@@ -72,6 +74,9 @@ public class InfoClassVisitor extends ClassVisitor {
     public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
         MethodVisitor methodVisitor = super.visitMethod(access, name, desc, signature, exceptions);
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName()+", access:"+access+", name:"+name+", desc:"+desc+", signature:"+signature+", exceptions:"+Arrays.toString(exceptions));
+
+        System.out.println("DxKitExtension searchStrings:" + DxKitExtension.searchStrings);
+        System.out.println("DxKitExtension clickUtilPath:" + DxKitExtension.searchStrings);
 
         if(name.equals("getNetworkTypeTest")){
             System.out.println(">>>>>>>>>>>>>>visitMethod is getNetworkTypeTest, return SimpleMethodVisitor");
