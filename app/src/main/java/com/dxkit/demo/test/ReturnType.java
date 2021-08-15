@@ -1,5 +1,11 @@
 package com.dxkit.demo.test;
 
+import android.os.Build;
+
+import java.util.function.Consumer;
+
+import androidx.annotation.RequiresApi;
+
 /**
  * 使用ASM 查看，判断返回类型
  *
@@ -7,7 +13,12 @@ package com.dxkit.demo.test;
  */
 public class ReturnType {
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public int getInt() {
+
+        // lambda表达式
+        Consumer<String> print = System.out::println;
+        print.accept("danxingxi");
         return 0;
     }
 

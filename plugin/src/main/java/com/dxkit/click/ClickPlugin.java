@@ -10,7 +10,7 @@ import org.gradle.api.Project;
  *
  * @author danxingxi
  */
-public class CheckClickPlugin extends BasePlugin {
+public class ClickPlugin extends BasePlugin {
 
     @Override
     protected void initExtension(Project project) {
