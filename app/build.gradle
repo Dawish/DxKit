@@ -9,14 +9,18 @@ clickExtension {
     isForbidStickClick = true
     canShowClickId = true
     clickUtilPath = "com.dxkit.util"
-    searchStrings = ["android/telephony/TelephonyManager"]
 }
 
 tryCatchExtension {
     methodMap = ["com.dxkit.demo.test.CrashTest.class": ["crashMethod1", "crashMethod2",
-                                                         "getInt", "isEnable", "getObj", "getStr",
+                                                         "getInt", "isEnable", "getObj", "getStr", "getChar", "show",
+                                                         "getFloat", "getByte", "getDouble", "getShort", "getLong",
+                                                         "getArrayObj", "getArrayObj2", "getArrayInt", "getArrayInt2",
+                                                         "getArrayBoolean", "getArrayBoolean2", "getList",
+                                                        ],
 
-                                                        ]
+                 "com.dx.tracer.util.NetUtil.class"  : ["getNetworkType", "getCrashString",],
+                 "com.dx.tracer.FrameFloatView.class": ["getExtra",],
     ]
 
     exceptionHandler = ["com.dxkit.library.utils.ExceptionHandler": "handleException"]
@@ -57,4 +61,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation(name: 'library-release', ext: 'aar')
 }

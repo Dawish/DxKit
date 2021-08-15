@@ -1,14 +1,16 @@
 package com.dxkit.click;
 
 import com.android.build.api.transform.Transform;
-import com.dxkit.base.BaseTransformPlugin;
+import com.dxkit.BasePlugin;
 
 import org.gradle.api.Project;
 
 /**
  * 点击处理
+ *
+ * @author danxingxi
  */
-public class CheckClickPlugin extends BaseTransformPlugin {
+public class CheckClickPlugin extends BasePlugin {
 
     @Override
     protected void initExtension(Project project) {
@@ -16,7 +18,8 @@ public class CheckClickPlugin extends BaseTransformPlugin {
     }
 
     @Override
-    public Transform getCustomTransform(Project project) {
-        return new CheckClickTransform();
+    protected Transform getTransform(Project project) {
+        return new ClickTransform(project);
     }
+
 }

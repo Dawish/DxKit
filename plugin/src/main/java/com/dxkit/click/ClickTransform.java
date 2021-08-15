@@ -1,4 +1,4 @@
-package com.dxkit.tryCatch;
+package com.dxkit.click;
 
 import com.dxkit.BaseTransform;
 import com.quinn.hunter.transform.asm.BaseWeaver;
@@ -10,19 +10,19 @@ import org.gradle.api.Project;
  *
  * @author danxingxi
  */
-public class TryCatchTransform extends BaseTransform {
+public class ClickTransform extends BaseTransform {
 
-    public TryCatchTransform(Project project) {
+    public ClickTransform(Project project) {
         super(project);
     }
 
     @Override
     public String getName() {
-        return "TryCatchTransform";
+        return "ClickTransform";
     }
 
     @Override
     protected BaseWeaver getWeaver() {
-        return new TryCatchWeaver();
+        return new ClickWeaver();
     }
 }

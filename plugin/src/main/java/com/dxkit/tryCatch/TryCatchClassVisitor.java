@@ -6,11 +6,12 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
 import org.objectweb.asm.commons.AdviceAdapter;
 
 import java.util.List;
 import java.util.Map;
+
+import javafx.util.Pair;
 
 /**
  * @author danxingxi
@@ -18,8 +19,6 @@ import java.util.Map;
 public class TryCatchClassVisitor extends ClassVisitor {
 
     private List<String> methodList;
-
-    private Object returnObject;
 
     TryCatchClassVisitor(ClassVisitor classVisitor, List<String> methodList) {
         super(Opcodes.ASM6, classVisitor);

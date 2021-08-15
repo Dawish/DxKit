@@ -4,9 +4,15 @@ apply plugin: 'maven'
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    //添加 gradle
+    // 添加 gradle
     // implementation 'com.android.tools.build:gradle:3.6.1'
     implementation 'com.android.tools.build:gradle:4.0.2'
+
+    // 使用hunter框架
+    implementation('com.quinn.hunter:hunter-transform:0.9.3') {
+        // 排除hunter带来的gradle传递依赖，以便自定义应用的gradle版本
+        exclude group: 'com.android.tools.build'
+    }
 }
 
 repositories {

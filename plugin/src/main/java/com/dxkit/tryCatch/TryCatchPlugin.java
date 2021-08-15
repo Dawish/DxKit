@@ -1,7 +1,7 @@
 package com.dxkit.tryCatch;
 
 import com.android.build.api.transform.Transform;
-import com.dxkit.base.BaseTransformPlugin;
+import com.dxkit.BasePlugin;
 
 import org.gradle.api.Project;
 
@@ -10,7 +10,7 @@ import org.gradle.api.Project;
  *
  * @author danxingxi
  */
-public class TryCatchPlugin extends BaseTransformPlugin {
+public class TryCatchPlugin extends BasePlugin {
 
     @Override
     protected void initExtension(Project project) {
@@ -18,7 +18,7 @@ public class TryCatchPlugin extends BaseTransformPlugin {
     }
 
     @Override
-    public Transform getCustomTransform(Project project) {
-        return new TryCatchTransform();
+    public Transform getTransform(Project project) {
+        return new TryCatchTransform(project);
     }
 }

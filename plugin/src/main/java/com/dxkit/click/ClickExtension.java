@@ -1,10 +1,8 @@
 package com.dxkit.click;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * DxKit extension.
+ *
  * @author danxingxi* @since 2031/8/11
  */
 public class ClickExtension {
@@ -18,6 +16,4 @@ public class ClickExtension {
     // 点击拦截工具的路径
     public static String clickUtilPath;
 
-    // 需要搜索的字符串数组
-    public static List<String> searchStrings = new ArrayList<>();
 }

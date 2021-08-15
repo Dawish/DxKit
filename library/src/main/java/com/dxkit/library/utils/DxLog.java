@@ -42,4 +42,20 @@ public final class DxLog {
         Log.e(tag, msg);
     }
 
+    public static void w(String tag, String msg, Throwable e) {
+        if (!ENABLE) {
+            return;
+        }
+
+        Log.w(tag, msg, e);
+    }
+
+    public static void e(String tag, String msg, Throwable e) {
+        if (!ENABLE) {
+            return;
+        }
+
+        Log.e(tag, msg, e);
+    }
+
 }

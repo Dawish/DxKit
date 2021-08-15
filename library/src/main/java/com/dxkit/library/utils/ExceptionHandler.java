@@ -3,6 +3,8 @@ package com.dxkit.library.utils;
 import androidx.annotation.Keep;
 
 /**
+ * asm aop处理异常
+ *
  * @author danxingxi
  */
 @Keep
@@ -12,7 +14,7 @@ public final class ExceptionHandler {
         if (exception == null) {
             return;
         }
-        DxLog.e("ExceptionHandler", "handleException:" + exception.toString());
+        DxLog.e("ExceptionHandler", "handleException:", exception);
     }
 
 }
