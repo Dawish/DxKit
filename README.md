@@ -1,5 +1,6 @@
-# DxKit
+# DxKit 基于ASN + transform 实现AOP功能
 
-### 1. 利用asm实现的一些开发小工具，比如查看所有点击View的id
-### 2. 利用asm实现click粘连问题
+### 1. 支持查看所有点击View的id
+### 2. 支持click粘连响应拦截
+### 3. 支持指定类的方法添加try catch保护
 ### ...

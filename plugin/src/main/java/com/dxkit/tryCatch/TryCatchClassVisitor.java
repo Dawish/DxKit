@@ -11,8 +11,6 @@ import org.objectweb.asm.commons.AdviceAdapter;
 import java.util.List;
 import java.util.Map;
 
-import javafx.util.Pair;
-
 /**
  * @author danxingxi
  */
