@@ -122,21 +122,11 @@ public class TryCatchClassVisitor extends ClassVisitor {
             // 0代表this， 1 第一个参数，异常信息保存到局部变量
             mv.visitVarInsn(ASTORE, 1);
 
-            Label l1 = new Label();
-            mv.visitLabel(l1);
-
             if (exceptionHandleClass != null && exceptionHandleMethod != null) {
-                // 指令拉回来
-                Label l2 = new Label();
-                mv.visitLabel(l2);
 
                 mv.visitVarInsn(ALOAD, 1);
                 mv.visitMethodInsn(INVOKESTATIC, exceptionHandleClass,
                         exceptionHandleMethod, "(Ljava/lang/Exception;)V", false);
-
-                // 指令拉回来
-                Label l3 = new Label();
-                mv.visitLabel(l3);
 
                 //TODO 需要根据方法返回类型签名符来返回默认值
                 mv.visitInsn(ICONST_0);
