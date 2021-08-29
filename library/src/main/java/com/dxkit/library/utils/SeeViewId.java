@@ -17,7 +17,7 @@ public final class SeeViewId {
                 && view.getContext().getResources() != null
                 && View.NO_ID != view.getId()) {
             String idName = view.getContext().getResources().getResourceEntryName(view.getId());
-            DxLog.d("SeeViewId", view.getClass().getSimpleName() + " id : " + idName);
+            DxLog.d("SeeViewId", view.getClass().getName() + "， id : " + idName);
         }
     }
 
