@@ -12,6 +12,7 @@ clickExtension {
 }
 
 tryCatchExtension {
+    // 需要加try catch的类及其中的方法信息
     methodMap = ["com.dxkit.demo.test.CrashTest.class": ["crashMethod1", "crashMethod2",
                                                          "getInt", "isEnable", "getObj", "getStr", "getChar", "show",
                                                          "getFloat", "getByte", "getDouble", "getShort", "getLong",
@@ -23,6 +24,7 @@ tryCatchExtension {
                  "com.dx.tracer.FrameFloatView.class": ["getExtra",],
     ]
 
+    // 用户处理异常信息的类和方法
     exceptionHandler = ["com.dxkit.library.utils.ExceptionHandler": "handleException"]
 }
 
