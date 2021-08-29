@@ -79,7 +79,7 @@ public class TryCatchClassVisitor extends ClassVisitor {
             Map<String, String> exceptionHandler = TryCatchExtension.exceptionHandler;
             if (exceptionHandler != null && !exceptionHandler.isEmpty()) {
                 exceptionHandler.entrySet().forEach(entry -> {
-                    exceptionHandleClass = entry.getKey().replace(".", "/");
+                    exceptionHandleClass = entry.getKey();
                     exceptionHandleMethod = entry.getValue();
                 });
             }

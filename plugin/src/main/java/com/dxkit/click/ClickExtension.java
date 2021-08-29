@@ -9,11 +9,12 @@ public class ClickExtension {
 
     // 是否禁止粘性click事件
     public static boolean isForbidStickClick = false;
+    public static String stickClickClass;
+    public static String stickClickMethod;
 
     // 是否显示click view id name
-    public static boolean canShowClickId = false;
-
-    // 点击拦截工具的路径
-    public static String clickUtilPath;
+    public static boolean canSeeClickId = false;
+    public static String seeIdClass;
+    public static String seeIdMethod;
 
 }

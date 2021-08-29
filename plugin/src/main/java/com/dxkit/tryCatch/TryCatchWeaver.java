@@ -25,7 +25,8 @@ public class TryCatchWeaver extends BaseWeaver {
 
             for (String keyClassName : TryCatchExtension.methodMap.keySet()) {
                 LogUtil.log("TryCatchWeaver: methodMap key:" + keyClassName);
-                if (fullQualifiedClassName.contains(keyClassName)) {
+                if (keyClassName != null && keyClassName.contains("/")
+                        && fullQualifiedClassName.contains(keyClassName.replace("/", "."))) {
                     methodList = TryCatchExtension.methodMap.get(keyClassName);
                     isSupport = true;
                     break;

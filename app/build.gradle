@@ -3,29 +3,32 @@ plugins {
 }
 
 apply plugin: 'dxkit-click'
-apply plugin: 'dxkit-tryCatch'
-
 clickExtension {
+    canSeeClickId = true
+    seeIdClass = "com/dxkit/library/utils/SeeViewId"
+    seeIdMethod = "seeViewIdName"
+
     isForbidStickClick = true
-    canShowClickId = true
-    clickUtilPath = "com.dxkit.util"
+    stickClickClass = "com/dxkit/library/utils/FastClickUtil"
+    stickClickMethod = "isFastDoubleClick"
 }
 
+apply plugin: 'dxkit-tryCatch'
 tryCatchExtension {
     // 需要加try catch的类及其中的方法信息
-    methodMap = ["com.dxkit.demo.test.CrashTest.class": ["crashMethod1", "crashMethod2",
+    methodMap = ["com/dxkit/demo/test/CrashTest": ["crashMethod1", "crashMethod2",
                                                          "getInt", "isEnable", "getObj", "getStr", "getChar", "show",
                                                          "getFloat", "getByte", "getDouble", "getShort", "getLong",
                                                          "getArrayObj", "getArrayObj2", "getArrayInt", "getArrayInt2",
                                                          "getArrayBoolean", "getArrayBoolean2", "getList",
                                                         ],
 
-                 "com.dx.tracer.util.NetUtil.class"  : ["getNetworkType", "getCrashString",],
-                 "com.dx.tracer.FrameFloatView.class": ["getExtra",],
+                 "com/dx/tracer/util/NetUtil"  : ["getNetworkType", "getCrashString",],
+                 "com/dx/tracer/FrameFloatView": ["getExtra",],
     ]
 
     // 用户处理异常信息的类和方法
-    exceptionHandler = ["com.dxkit.library.utils.ExceptionHandler": "handleException"]
+    exceptionHandler = ["com/dxkit/library/utils/ExceptionHandler": "handleException"]
 }
 
 android {
