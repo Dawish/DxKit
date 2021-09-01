@@ -24,7 +24,10 @@ tryCatchExtension {
                                                         ],
 
                  "com/dx/tracer/util/NetUtil"  : ["getNetworkType", "getCrashString",],
+                 // aar code
                  "com/dx/tracer/FrameFloatView": ["getExtra",],
+                 // implementation androidX code
+                 "androidx/appcompat/app/AppCompatActivity": ["onStop",],
     ]
 
     // 用户处理异常信息的类和方法

@@ -36,12 +36,18 @@ add this code into build.gradle
                                                         ],
 
                  "com/dx/tracer/util/NetUtil"  : ["getNetworkType", "getCrashString",],
+                  // aar code
                  "com/dx/tracer/FrameFloatView": ["getExtra",],
+                 // implementation androidX code
+                 "androidx/appcompat/app/AppCompatActivity": ["onStop",],
     ]
 
     // 用户处理异常信息的类和方法
     exceptionHandler = ["com/dxkit/library/utils/ExceptionHandler": "handleException"]
 }
 ```
+#### 处理 androidX 库AppCompatActivity的onStop方法结果如下：
+![avatar](/img/AppCompatActivity_onStop.png)
+
 
 ### 更多功能持续更新中...
