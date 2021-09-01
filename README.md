@@ -47,7 +47,6 @@ add this code into build.gradle
 }
 ```
 #### 处理 androidX 库AppCompatActivity的onStop方法结果如下：
-![avatar](/img/AppCompatActivity_onStop.png)
-
+![](/img/AppCompatActivity_onStop.png)
 
 ### 更多功能持续更新中...
