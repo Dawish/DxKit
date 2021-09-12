@@ -90,14 +90,13 @@ add this code into build.gradle
             return null;
         }
     }
-        public double getDouble() {
-        try {
-            double a = 2.3D;
-            return a;
-        } catch (Exception var3) {
-            ExceptionHandler.handleException(var3);
-            return 0.0D;
-        }
+    public double getDouble() {
+    try {
+        double a = 2.3D;
+        return a;
+    } catch (Exception var3) {
+        ExceptionHandler.handleException(var3);
+        return 0.0D;
     }
 
     public long getLong() {
