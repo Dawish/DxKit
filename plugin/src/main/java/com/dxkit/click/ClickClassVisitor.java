@@ -1,7 +1,5 @@
 package com.dxkit.click;
 
-import com.dxkit.utils.LogUtil;
-
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
@@ -24,10 +22,6 @@ public class ClickClassVisitor extends ClassVisitor {
     @Override
     public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
         MethodVisitor methodVisitor = cv.visitMethod(access, name, descriptor, signature, exceptions);
-
-        LogUtil.log("------ name:" + name + " ------");
-        LogUtil.log("DxKit descriptor:" + descriptor);
-        LogUtil.log("DxKit signature:" + signature);
 
         if ("onClick".equals(name) && "(Landroid/view/View;)V".equals(descriptor)) {
             return new ClickMethodVisitor(api, methodVisitor, access, name, descriptor);

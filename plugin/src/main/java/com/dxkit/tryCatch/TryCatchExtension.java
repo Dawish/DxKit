@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class TryCatchExtension {
 
-    //添加try catch的类  类中方法集合
+    // 添加try catch的类  类中方法集合
     public static Map<String, List<String>> methodMap = new HashMap<>();
 
     // 处理异常的类名和方法名

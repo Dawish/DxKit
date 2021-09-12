@@ -1,5 +1,6 @@
 package com.dxkit.tryCatch;
 
+import com.dxkit.utils.ASMUtil;
 import com.dxkit.utils.LogUtil;
 
 import org.objectweb.asm.ClassVisitor;
@@ -10,6 +11,8 @@ import org.objectweb.asm.commons.AdviceAdapter;
 
 import java.util.List;
 import java.util.Map;
+
+import javafx.util.Pair;
 
 /**
  * @author danxingxi
@@ -66,9 +69,10 @@ public class TryCatchClassVisitor extends ClassVisitor {
 
         private String exceptionHandleMethod;
 
-        private Label from = new Label(),   // 异常作用域开头
-                to = new Label(),           // 异常作用域结尾
-                target = new Label();       // 异常捕获后的代码开头
+        private Label startLabel = new Label(),   // 开头
+                endLabel = new Label(),           // 结尾
+                handlerLabel = new Label(),       // 处理
+                returnLabel = new Label();        // 返回
 
         TryCatchMethodVisitor(int api, MethodVisitor methodVisitor, int access, String name, String descriptor) {
             super(api, methodVisitor, access, name, descriptor);
@@ -96,12 +100,12 @@ public class TryCatchClassVisitor extends ClassVisitor {
         @Override
         protected void onMethodEnter() {
             super.onMethodEnter();
-            //标志try块开始位置
-            mv.visitLabel(from);
-            mv.visitTryCatchBlock(from,
-                    to,
-                    target,
+            // 1标志：try块开始位置
+            mv.visitTryCatchBlock(startLabel,
+                    endLabel,
+                    handlerLabel,
                     "java/lang/Exception");
+            mv.visitLabel(startLabel);
         }
 
         @Override
@@ -112,33 +116,39 @@ public class TryCatchClassVisitor extends ClassVisitor {
 
         @Override
         public void visitMaxs(int maxStack, int maxLocals) {
-            //标志：try块结束
-            mv.visitLabel(to);
+            // 2标志：try块结束
+            mv.visitLabel(endLabel);
 
-            //标志：catch块开始位置
-            mv.visitLabel(target);
+            // 3标志：catch块开始位置
+            mv.visitLabel(handlerLabel);
             mv.visitFrame(Opcodes.F_SAME1, 0, null, 1, new Object[]{"java/lang/Exception"});
-
             // 0代表this， 1 第一个参数，异常信息保存到局部变量
             mv.visitVarInsn(ASTORE, 1);
-
+            // 从local variables取出局部变量到operand stack
+            mv.visitVarInsn(ALOAD, 1);
+            // 自定义异常处理
             if (exceptionHandleClass != null && exceptionHandleMethod != null) {
-
-                mv.visitVarInsn(ALOAD, 1);
                 mv.visitMethodInsn(INVOKESTATIC, exceptionHandleClass,
                         exceptionHandleMethod, "(Ljava/lang/Exception;)V", false);
 
-                //TODO 需要根据方法返回类型签名符来返回默认值
-                mv.visitInsn(ICONST_0);
-                mv.visitInsn(IRETURN);
-
-
             } else {
-                // 取出局部变量到操作站
-                mv.visitVarInsn(ALOAD, 1);
                 // 没提供处理类就直接抛出异常
                 mv.visitInsn(ATHROW);
             }
+
+            // 顺序向下执行，可以不要GOTO
+            //mv.visitJumpInsn(Opcodes.GOTO, returnLabel);
+            // 返回label
+            // mv.visitLabel(returnLabel);
+
+            // catch结束，方法返回默认值收工
+            Pair<Integer, Integer> defaultVo = ASMUtil.getDefaultByDesc(methodDesc);
+            int value = defaultVo.getKey();
+            int opcode = defaultVo.getValue();
+            if (value >= 0) {
+                mv.visitInsn(value);
+            }
+            mv.visitInsn(opcode);
 
             super.visitMaxs(maxStack, maxLocals);
 
