@@ -139,6 +139,8 @@ add this code into build.gradle
         }
     }
 ```
+具体实现原理请看`TryCatchClassVisitor.java` 和 `ASMUtil.java`
+
 #### 处理 androidX 库AppCompatActivity的onStop方法结果如下：
 ![Alt text](./img/AppCompatActivity_onStop.png) 
 
