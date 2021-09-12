@@ -46,6 +46,100 @@ add this code into build.gradle
     exceptionHandler = ["com/dxkit/library/utils/ExceptionHandler": "handleException"]
 }
 ```
+#### 支持根据方法签名在发生异常时返回默认
+##### 源代码
+```java
+    public Object getObj() {
+        Object object = new Object();
+        return object;
+    }
+    
+    public double getDouble() {
+        double a = 2.3d;
+        return a;
+    }
+
+    public long getLong() {
+        long a = 1234567L;
+        return a;
+    }
+
+    public float getFloat() {
+        float a = 231234213.45f;
+        return a;
+    }
+
+    public short getShort() {
+        short a = 32767;
+        return a;
+    }
+
+    public byte getByte() {
+        byte a = 127;
+        return a;
+    }
+```
+##### ASM处理后
+```java
+    public Object getObj() {
+        try {
+            Object object = new Object();
+            return object;
+        } catch (Exception var2) {
+            ExceptionHandler.handleException(var2);
+            return null;
+        }
+    }
+        public double getDouble() {
+        try {
+            double a = 2.3D;
+            return a;
+        } catch (Exception var3) {
+            ExceptionHandler.handleException(var3);
+            return 0.0D;
+        }
+    }
+
+    public long getLong() {
+        try {
+            long a = 1234567L;
+            return a;
+        } catch (Exception var3) {
+            ExceptionHandler.handleException(var3);
+            return 0L;
+        }
+    }
+
+    public float getFloat() {
+        try {
+            float a = 2.31234208E8F;
+            return a;
+        } catch (Exception var2) {
+            ExceptionHandler.handleException(var2);
+            return 0.0F;
+        }
+    }
+
+    public short getShort() {
+        try {
+            short a = 32767;
+            return a;
+        } catch (Exception var2) {
+            ExceptionHandler.handleException(var2);
+            return 0;
+        }
+    }
+
+    public byte getByte() {
+        try {
+            byte a = 127;
+            return a;
+        } catch (Exception var2) {
+            ExceptionHandler.handleException(var2);
+            return 0;
+        }
+    }
+```
 #### 处理 androidX 库AppCompatActivity的onStop方法结果如下：
 ![Alt text](./img/AppCompatActivity_onStop.png) 
 
