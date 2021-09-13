@@ -12,6 +12,7 @@ clickExtension {
 ```
 
 ### 2. 支持click粘连响应拦截
+原理说明博文：[Android Transform+ASM添加try catch并返回默认值之明白讲义：https://www.jianshu.com/p/50882f3af59d](https://www.jianshu.com/p/50882f3af59d)
 add this code into build.gradle
 ```groovy
 apply plugin: 'dxkit-click'
